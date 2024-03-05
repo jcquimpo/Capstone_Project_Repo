@@ -27,7 +27,8 @@ def login():
         password = request.form['password']
         user = User.query.filter_by(username=username, password=password).first()
         if user:
-            return f'Welcome, {username}!'
+            # return f'Welcome, {username}!'
+            return redirect(url_for('profile', username=username))
         else:
             return 'Invalid username or password'
     return render_template('login.html')
@@ -50,6 +51,10 @@ def register():
             db.session.commit()
             return redirect(url_for('login'))
     return render_template('register.html')
+
+@app.route('/profile/<username>')
+def profile(username):
+    return render_template('profile.html', username=username)
 
 if __name__ == '__main__':
     app.run(debug=True)
