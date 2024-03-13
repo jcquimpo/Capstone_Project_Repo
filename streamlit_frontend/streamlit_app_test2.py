@@ -50,7 +50,7 @@ def logout():
     st.info("You have been logged out.")
 
 # Function to display the home page
-def home():
+def home_page():
     st.title("Home Page")
     st.write("Welcome to the home page.")
     # st.write("You are logged in as:", st.session_state.username)
@@ -86,7 +86,7 @@ def register_page():
             st.error("Passwords do not match.")
 
 # Function to display the profile page with LLM chatbot
-def profile():
+def profile_page():
     st.title("Profile")
     st.write("Username:", st.session_state.username)
     st.button("Logout", on_click=logout)
@@ -99,16 +99,24 @@ def profile():
             prompt=f"User: {user_input}\nBot:"
         )
         st.text_area("Bot:", value=response.choices[0].text.strip(), height=200)
+        
+# Function to display the home page
+def faq_page():
+    st.title("FAQ Page")
+    st.write("Welcome to the FAQ page.")
+    st.write("CONTENT TBD")
+    
+    st.button("Logout", on_click=logout)
 
 # Main function to run the Streamlit app
 def main():
     create_table()  # Ensure the users table is created when the app starts
 
     st.sidebar.title("MindEase")
-    page = st.sidebar.radio("", ["Home", "Login", "Register", "Profile"])
+    page = st.sidebar.radio("", ["Home", "Login", "Register", "Profile", "FAQ"])
 
     if page == "Home":
-        home()
+        home_page()
     elif page == "Login":
         login_page()
     elif page == "Register":
@@ -117,7 +125,9 @@ def main():
         if "logged_in" not in st.session_state or not st.session_state.logged_in:
             st.write("Please login to access this page.")
         else:
-            profile()
+            profile_page()
+    elif page == "FAQ":
+        faq_page()
             
 if __name__ == "__main__":
     main()
