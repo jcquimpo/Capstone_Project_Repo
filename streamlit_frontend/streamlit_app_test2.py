@@ -89,7 +89,7 @@ def register_page():
 def profile_page():
     st.title("Profile")
     st.write("Username:", st.session_state.username)
-    st.button("Logout", on_click=logout)
+    st.write("Your user information will be stored here....")
     # Add the LLM chatbot to the profile page
     st.title("Chat with MindEase Companion")
     user_input = st.text_input("You:", "")
@@ -99,11 +99,20 @@ def profile_page():
             prompt=f"User: {user_input}\nBot:"
         )
         st.text_area("Bot:", value=response.choices[0].text.strip(), height=200)
+    st.button("Logout", on_click=logout)
         
 # Function to display the home page
 def faq_page():
     st.title("FAQ Page")
     st.write("Welcome to the FAQ page.")
+    st.write("CONTENT TBD")
+    
+    st.button("Logout", on_click=logout)
+    
+# Function to display the home page
+def contact_page():
+    st.title("Contact Page")
+    st.write("Welcome to the Contact page.")
     st.write("CONTENT TBD")
     
     st.button("Logout", on_click=logout)
@@ -113,7 +122,10 @@ def main():
     create_table()  # Ensure the users table is created when the app starts
 
     st.sidebar.title("MindEase")
-    page = st.sidebar.radio("", ["Home", "Login", "Register", "Profile", "FAQ"])
+    if "page_to_display" in st.session_state:
+        page = st.session_state.pop("page_to_display")
+    else:
+        page = st.sidebar.radio("", ["Home", "Login", "Register", "Profile", "FAQ", "Contact"])
 
     if page == "Home":
         home_page()
@@ -124,10 +136,15 @@ def main():
     elif page == "Profile":
         if "logged_in" not in st.session_state or not st.session_state.logged_in:
             st.write("Please login to access this page.")
+            # feature where the user can click the login button and go to the login page WIP
+            # if st.button("Login"):
+            #     st.session_state.page_to_display = "Login"
         else:
             profile_page()
     elif page == "FAQ":
         faq_page()
+    elif page == "Contact":
+        contact_page()
             
 if __name__ == "__main__":
     main()
