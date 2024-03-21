@@ -34,9 +34,17 @@ def login():
     return render_template('login.html')
 
 @app.route('/profile/<username>')
+# TODO: only accessible if you logged in already - make that function
 def profile(username):
     return render_template('profile.html', username=username)
 
+@app.route('/profile')
+# TODO: only accessible if you logged in already - make that function
+# TODO: "if not logged in "please login or register"
+def profile_noLogin():
+    return render_template('profile.html')
+
+# TODO: make dropdown register menu - client or therapist 
 @app.route('/register_client', methods=['GET', 'POST'])
 def register_client():
     if request.method == 'POST':
@@ -76,6 +84,10 @@ def register_therapist():
     #         db.session.commit()
     #         return redirect(url_for('login'))
     return render_template('register_therapist.html')
+
+@app.route('/aboutus')
+def aboutus():
+    return render_template('aboutus.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
