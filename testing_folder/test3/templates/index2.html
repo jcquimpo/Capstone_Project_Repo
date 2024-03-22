@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .profile-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .profile-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            background-color: #ccc;
+            overflow: hidden;
+        }
+
+        .profile-picture img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-name {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .profile-email {
+            color: #666;
+            font-style: italic;
+        }
+
+        .profile-section {
+            margin-bottom: 30px;
+        }
+
+        .profile-section h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .profile-section p {
+            margin-bottom: 5px;
+        }
+
+        .profile-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .profile-skill {
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .profile-projects {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .profile-projects li {
+            margin-bottom: 5px;
+        }
+        
+        .chatbot-container {
+            flex-basis: calc(50% - 10px); /* 50% width with gap of 20px */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .chatbot-window {
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            height: 300px;
+            overflow-y: auto;
+        }
+
+        .chatbot-input {
+            margin-top: 10px;
+            width: 100%;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-header">
+            <div class="profile-picture">
+                <img src="profile-picture.jpg" alt="Profile Picture">
+            </div>
+        </div>
+        <div class="profile-section">
+            <div class="profile-name">John Doe</div>
+            <h2>Personal Information</h2>
+            <p>Age: 30</p>
+            <p>Location: New York City</p>
+            <p>Occupation: Software Developer</p>
+            <div class="profile-email">john.doe@example.com</div>
+        </div>
+        <div class="profile-section">
+            <h2>Contact Details</h2>
+            <p>Phone: +1234567890</p>
+            <p>Address: 123 Main St, New York</p>
+        </div>
+        <div class="chatbot-container">
+            <div class="chatbot-window">
+                <!-- Chatbot messages will appear here -->
+                <div>User: Hello, Chatbot!</div>
+                <div>Chatbot: Hi there! How can I assist you?</div>
+                <!-- Add more chatbot messages dynamically using JavaScript -->
+            </div>
+            <input type="text" class="chatbot-input" placeholder="Type your message...">
+        </div>
+    </div>
+</body>
+</html>
