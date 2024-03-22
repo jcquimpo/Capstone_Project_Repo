@@ -18,6 +18,7 @@ div.st-emotion-cache-1oe5cao.eczjsme9[data-testid="stSidebarNavItems"] {
 st.markdown(custom_css, unsafe_allow_html=True)
 
 # Set up OpenAI API key
+# OpenAPI or GeminiAPI
 openai.api_key = "your_openai_api_key"
 
 def create_table():

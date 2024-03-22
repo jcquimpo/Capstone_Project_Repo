@@ -36,13 +36,13 @@ def login():
 
 @app.route('/profile/<username>')
 def profile(username):
-    # Check if the user is logged in
-    if 'username' in session and session['username'] == username:
-        return render_template('profile.html', username=username)
-    else:
-        return redirect(url_for('login'))
+    # TODO: Check if the user is logged in
+    # if 'username' in session and session['username'] == username:
+    #     return render_template('profile.html', username=username)
+    # else:
+    #     return redirect(url_for('login'))
+    return render_template('profile.html', username=username)
 
-# TODO: make dropdown register menu - client or therapist 
 @app.route('/register_client', methods=['GET', 'POST'])
 def register_client():
     if request.method == 'POST':
@@ -62,7 +62,6 @@ def register_client():
             return redirect(url_for('login'))
     return render_template('register_client.html')
 
-# need to edit function for the therapist registration because it is a different form from the client
 @app.route('/register_therapist', methods=['GET', 'POST'])
 def register_therapist():
     if request.method == 'POST':
