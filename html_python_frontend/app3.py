@@ -4,6 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.secret_key = 'your_secret_key'  # Add a secret key for session
 db = SQLAlchemy(app)
 
 # TODO: For testing purposes - removed the unique aspect
@@ -34,9 +35,12 @@ def login():
         password = request.form['password']
         user = Client.query.filter_by(username=username, password=password).first()
         if user:
-            # return f'Welcome, {username}!'
+            # Set the username in the session
+            session['username'] = username
+            print(f"User {username} logged in successfully.")
             return redirect(url_for('profile', username=username))
         else:
+            print("Invalid username or password.")
             return 'Invalid username or password'
     return render_template('login.html')
 
@@ -78,10 +82,22 @@ def register_therapist():
             return redirect(url_for('login'))
     return render_template('register_therapist.html')
 
-# TODO: edit function to check if a user/therapist is logged in 
 @app.route('/profile/<username>')
 def profile(username):
-    return render_template('profile.html', username=username)
-
+    # TODO: Check if the user is logged in
+    if 'username' in session:
+        if session['username'] == username:
+            return render_template('profile.html', username=username)
+        else:
+            print(f"User {session['username']} attempted to access profile of {username}.")
+            return redirect(url_for('login'))
+    else:
+        print("User is not logged in.")
+        return redirect(url_for('login'))
+    
+@app.route('/aboutus')
+def aboutus():
+    return render_template('aboutus.html')
+    
 if __name__ == '__main__':
     app.run(debug=True)
