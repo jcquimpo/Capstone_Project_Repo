@@ -36,6 +36,7 @@ def login():
 
 @app.route('/profile/<username>')
 def profile(username):
+    # TODO: implement Gemini API for the profile page 
     # TODO: Check if the user is logged in
     # if 'username' in session and session['username'] == username:
     #     return render_template('profile.html', username=username)
