@@ -78,6 +78,7 @@ def register_therapist():
             return redirect(url_for('login'))
     return render_template('register_therapist.html')
 
+# TODO: edit function to check if a user/therapist is logged in 
 @app.route('/profile/<username>')
 def profile(username):
     return render_template('profile.html', username=username)
