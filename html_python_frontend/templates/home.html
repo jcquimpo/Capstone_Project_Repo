@@ -10,12 +10,10 @@
         margin: 0;
         font-family: Arial, Helvetica, sans-serif;
       }
-      
       .topnav {
         overflow: hidden;
         background-color: #333;
       }
-      
       .topnav a {
         float: left;
         color: #f2f2f2;
@@ -24,22 +22,42 @@
         text-decoration: none;
         font-size: 17px;
       }
-      
       .topnav a:hover {
         background-color: #ddd;
         color: black;
       }
-      
       .topnav a.active {
         background-color: #04aa6d;
         color: white;
       }
-      
+      .topnav form {
+        float: right;
+        margin-top: 8px;
+        margin-right: 10px;
+      }
+      .topnav input[type="text"] {
+          padding: 8px;
+          border-radius: 5px;
+          border: none;
+          margin-right: 5px;
+      }
+      .topnav button[type="submit"] {
+          padding: 8px;
+          border-radius: 5px;
+          border: none;
+          background-color: #4CAF50;
+          color: white;
+          cursor: pointer;
+      }
+      .topnav::after {
+          content: "";
+          clear: both;
+          display: table;
+      }
       .dropdown {
         float: left;
         overflow: hidden;
       }
-      
       .dropbtn {
         font-size: 17px;
         border: none;
@@ -50,7 +68,6 @@
         font-family: inherit;
         margin: 0;
       }
-      
       .dropdown-content {
         display: none;
         position: absolute;
@@ -59,7 +76,6 @@
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         z-index: 1;
       }
-      
       .dropdown-content a {
         float: none;
         color: black;
@@ -68,11 +84,9 @@
         display: block;
         text-align: left;
       }
-      
       .dropdown-content a:hover {
         background-color: #ddd;
       }
-      
       .dropdown:hover .dropdown-content {
         display: block;
       }
@@ -99,22 +113,100 @@
         <a href="/login">Login</a>
         <a href="/profile">Profile</a>
         <div class="dropdown">
-          <button class="dropbtn">Register</button>
-          <div class="dropdown-content">
-            <a href="/register_client">Register Client</a>
-            <a href="/register_therapist">Register Therapist</a>
-          </div>
+            <button class="dropbtn">Register</button>
+            <div class="dropdown-content">
+                <a href="/register_client">Register Client</a>
+                <a href="/register_therapist">Register Therapist</a>
+            </div>
         </div>
         <a href="/aboutus">About Us</a>
-      </div>
+        <!-- Search form - to search for a therapist -->
+        <form action="/search" method="GET">
+            <input type="text" placeholder="Search for a therapist" name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+    
     </header>
     <div class="container">
       <h1>Welcome to MindEase</h1>
       <p>Welcome to the Home Page!</p>
       <p>Feel free to talk to us!</p>
-
-      <p>Your favorite destination for all things Pynecone!</p>
-      <p>This is the Home Page!</p>
+    </div>  
+    
+    <div class="container">
+      <h2>How does MindEase work?</h2>
+      <p>Welcome to MindEase, your personalized AI therapy companion!</p>
+      <ol>
+        <li>Sign up or log in to your MindEase account.</li>
+        <li>Take the initial assessment to personalize your therapy journey.</li>
+        <li>Explore various therapy modules based on your needs.</li>
+        <li>Engage with our AI-powered chatbot for real-time support and guidance.</li>
+        <li>Access resources like guided meditations, journaling prompts, and relaxation exercises.</li>
+      </ol>
+      <p>Start your journey to mental wellness with MindEase today!</p>
     </div>
+
+    <div class="container">
+      <h2>Why MindEase?</h2>
+      <p>MindEase offers a revolutionary approach to mental health support:</p>
+      <ul>
+        <li><strong>Accessible:</strong> Get support anytime, anywhere, with our user-friendly platform.</li>
+        <li><strong>Personalized:</strong> Experience personalized guidance and evidence-based interventions tailored to your needs.</li>
+        <li><strong>Inclusive:</strong> Break down barriers to mental health care and foster a supportive community.</li>
+        <li><strong>Empowering:</strong> Take control of your mental well-being and build resilience for life's challenges.</li>
+        <li><strong>Innovative:</strong> Leverage the power of AI to revolutionize mental health support and lead a fulfilling life.</li>
+      </ul>
+    </div>
+
+    <div class="container">
+      <table>
+          <thead>
+              <tr>
+                  <th></th>
+                  <th>MindEase</th>
+                  <th>In-person</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>A therapist licensed in your state</td>
+                  <td>✔️</td>
+                  <td>✔️</td>
+              </tr>
+              <tr>
+                  <td>Receive therapy from anywhere</td>
+                  <td>✔️</td>
+                  <td>❌</td>
+              </tr>
+              <tr>
+                  <td>Message your therapist any time</td>
+                  <td>✔️</td>
+                  <td>❌</td>
+              </tr>
+              <tr>
+                  <td>Receive messages back</td>
+                  <td>✔️</td>
+                  <td>❌</td>
+              </tr>
+              <tr>
+                  <td>Easy appointment scheduling</td>
+                  <td>✔️</td>
+                  <td>❌</td>
+              </tr>
+              <tr>
+                  <td>Quickly switch therapists</td>
+                  <td>✔️</td>
+                  <td>❌</td>
+              </tr>
+              <tr>
+                  <td>No parking fees or lost travel time</td>
+                  <td>✔️</td>
+                  <td>❌</td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+
   </body>
 </html>
