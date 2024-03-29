@@ -3,162 +3,198 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MindEase - Profile</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <title>MindEase</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <style>
-      body {
-        margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
+      .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
       }
-      .topnav {
-        overflow: hidden;
-        background-color: #333;
+      .dropdown-menu {
+        margin-top: 0;
       }
-      .topnav a {
-        float: left;
-        color: #f2f2f2;
+      .header-container {
+        padding-top: 80px;
+      }
+      .profile-container {
+        padding: 20px;
+      }
+      .profile-picture img {
+        max-width: 150px;
+        border-radius: 50%;
+      }
+      .welcome-message {
+        font-size: 36px;
         text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 17px;
-      }
-      .topnav a:hover {
-        background-color: #ddd;
-        color: black;
-      }
-      .topnav a.active {
-        background-color: #04aa6d;
-        color: white;
-      }
-      .topnav form {
-        float: right;
-        margin-top: 8px;
-        margin-right: 10px;
-      }
-      .topnav input[type="text"] {
-          padding: 8px;
-          border-radius: 5px;
-          border: none;
-          margin-right: 5px;
-      }
-      .topnav button[type="submit"] {
-          padding: 8px;
-          border-radius: 5px;
-          border: none;
-          background-color: #4CAF50;
-          color: white;
-          cursor: pointer;
-      }
-      .topnav::after {
-          content: "";
-          clear: both;
-          display: table;
-      }
-      .dropdown {
-        float: left;
-        overflow: hidden;
-      }
-      .dropbtn {
-        font-size: 17px;
-        border: none;
-        outline: none;
-        color: white;
-        padding: 14px 16px;
-        background-color: inherit;
-        font-family: inherit;
-        margin: 0;
-      }
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f9f9f9;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-      }
-      .dropdown-content a {
-        float: none;
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        text-align: left;
-      }
-      .dropdown-content a:hover {
-        background-color: #ddd;
-      }
-      .dropdown:hover .dropdown-content {
-        display: block;
+        margin-bottom: 20px;
       }
       .container {
-        max-width: 800px;
-        margin: auto;
-        padding: 20px;
-        border-radius: 8px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        margin-top: 50px;
       }
-      .container p {
-        color: #666;
-        line-height: 1.6;
+      .chatbot-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 500px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        background-color: #fff;
+      }
+      .chatbot-header {
+          background-color: #007bff;
+          color: #fff;
+          padding: 10px;
+          cursor: pointer;
+      }
+      .chatbot-window {
+        height: 650px; 
+        overflow-y: scroll; 
+        border: 1px solid #ccc; 
+      }
+      .chatbot-input {
+          width: calc(100% - 70px);
+          margin: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          padding: 5px;
+      }     
+      .send-button {
+        width: 80px;
+        border: 1px solid #007bff;
+        border-radius: 0 5px 5px 0;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
       }
     </style>
   </head>
   <body>
     <header>
-      <div class="topnav">
-        <a href="/">Home</a>
-        <a href="/login">Login</a>
-        <a href="/profile">Profile</a>
-        <div class="dropdown">
-            <button class="dropbtn">Register</button>
-            <div class="dropdown-content">
-                <a href="/register_client">Register Client</a>
-                <a href="/register_therapist">Register Therapist</a>
-            </div>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      function toggleChatbot() {
+        var chatbotContent = document.getElementById('chatbotContent');
+        if (chatbotContent.style.display === 'block') {
+            chatbotContent.style.display = 'none';
+        } else {
+            chatbotContent.style.display = 'block';
+        }
+      }
+
+      function sendMessage() {
+          var userMessageInput = document.getElementById('userMessageInput');
+          var userMessage = userMessageInput.value.trim();
+          if (userMessage !== '') {
+              addMessage('{{ username }}', userMessage);
+              userMessageInput.value = '';
+              // Send the user message to the server and handle the response
+              // Can use AJAX (e.g., fetch or XMLHttpRequest) to send the message to your server
+              // and update the chatbot window with the server's response
+          }
+      }
+
+      function handleKeyPress(event) {
+          if (event.key === 'Enter') {
+              sendMessage();
+          }
+      }
+
+      function addMessage(sender, message) {
+          var chatbotMessages = document.getElementById('chatbotMessages');
+          var messageDiv = document.createElement('div');
+          messageDiv.textContent = sender + ': ' + message;
+          chatbotMessages.appendChild(messageDiv);
+          chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+      }
+    </script>
+
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="/">MindEase</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/login">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/profile">Profile</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Register</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/register_client">Register Client</a>
+                <a class="dropdown-item" href="/register_therapist">Register Therapist</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/">About Us</a>
+            </li>
+          </ul>
+          <a class="btn btn-success btn-sm rounded" href="/get-started">Get Started</a>
         </div>
-        <a href="/aboutus">About Us</a>
-        <!-- Search form - to search for a therapist -->
-        <form action="/search" method="GET">
-            <input type="text" placeholder="Search for a therapist" name="search">
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-    </div>
+      </nav>
     </header>
+
     <div class="container">
-      <h1>Welcome! How are you today?</h1>
-      <p>Welcome, {{ username }}</p>
-      <button onclick="window.location.href='/logout'">Logout</button>
+      <br></br>
+      <div class="welcome-container">
+        <h2 class="welcome-message text-success">Welcome!</h2>
+        <p class="username">Hello, {{ username }}</p>
     </div>
-    <div class="profile-container">
-      <div class="profile-header">
-        <div class="profile-picture">
-          <img src="{{ url_for('static', filename='images/default_pfp.jpg') }}" alt="Profile Picture" />
+      <button class="btn btn-danger" onclick="window.location.href='/logout'">Logout</button>
+    </div>
+
+    <div class="container profile-container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="profile-header">
+            <div class="profile-picture">
+              <img src="{{ url_for('static', filename = 'images/default_pfp.jpg') }}" alt="Profile Picture" class="img-fluid" />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="profile-section">
+            <div class="profile-name">
+              <h2>{{ username }}</h2>
+            </div>
+            <h3>Personal Information</h3>
+            <p>Age:</p>
+            <p>Location:</p>
+            <p>Medical Information:</p>
+            <div class="profile-email">{{ email }}</div>
+          </div>
+          <div class="profile-section">
+            <h3>Contact Details</h3>
+            <p>Phone: +1234567890</p>
+            <p>Address: 123 Main St, New York</p>
+          </div>
+          <a class="btn btn-success btn-sm rounded" href="#">Chat with EaseChat</a>
+          <a class="btn btn-success btn-sm rounded" href="#">Connect With a Therapist</a>
         </div>
       </div>
-      <div class="profile-section">
-        <div class="profile-name">{{ username }}</div>
-        <h2>Personal Information</h2>
-        <p>Age: </p>
-        <p>Location: </p>
-        <p>Medical Information: </p>
-        <div class="profile-email">{{ email }}</div>
-      </div>
-      <div class="profile-section">
-        <h2>Contact Details</h2>
-        <p>Phone: +1234567890</p>
-        <p>Address: 123 Main St, New York</p>
-      </div>
-      <div class="chatbot-container">
-        <div class="chatbot-window">
-          <!-- Chatbot messages will appear here -->
-          <div>User: Hello, Chatbot!</div>
-          <div>Chatbot: Hi there! How can I assist you?</div>
-          <!-- Add more chatbot messages dynamically using JavaScript -->
+      <div class="row mt-4">
+        <div class="col-md-12">
+          <div class="chatbot-container" id="chatbotContainer">
+            <div class="chatbot-header" onclick="toggleChatbot()">EaseChat</div>
+            <div id="chatbotContent" class="collapse">
+                <div class="chatbot-window">
+                    <div>{{ username }}: Hello, EaseChat!</div>
+                    <div>EaseChat: Hi there! How can I assist you?</div>
+                </div>
+                <input type="text" class="chatbot-input" placeholder="Type your message..." />
+                <button class="btn btn-primary send-button" onclick="sendMessage()">Send</button>
+            </div>
+          </div>
         </div>
-        <input type="text" class="chatbot-input" placeholder="Type your message..." />
       </div>
     </div>
   </body>
