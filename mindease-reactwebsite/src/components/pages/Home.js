@@ -1,13 +1,12 @@
 import '../../App.css'
 import HeroSection from '../HeroSection'
-import Cards from '../Cards';
+// import Cards from '../Cards';
 
 function Home() {
     return (
-        <>
+        <div>
             <HeroSection />
-            <Cards />
-        </>
+        </div>
     );
 }
 
