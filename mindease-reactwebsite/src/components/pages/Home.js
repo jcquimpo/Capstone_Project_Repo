@@ -3,6 +3,7 @@ import Cards from '../Cards';
 import Footer from '../Footer';
 import HeroSection from '../HeroSection'
 
+// TODO: fix styling for the home page
 
 function Home() {
     return (
