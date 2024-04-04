@@ -7,17 +7,25 @@ video {
   }
   
   .hero-container {
-    /* background: url('/images/img-home.jpg') center center/cover no-repeat; */
+    /* background-image: url('images/mindease_img1.jpg'); */
     height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    justify-content: center;
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
     object-fit: contain;
+    overflow: hidden;
   }
   
+  .hero-container > img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
   .hero-container > h1 {
     color: #fff;
     font-size: 100px;
