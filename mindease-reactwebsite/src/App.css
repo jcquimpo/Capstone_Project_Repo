@@ -19,9 +19,8 @@
   font-size: 3rem;
 }
 
+/* TODO: need to style profile page */
 .profile {
-  background-image: url('../public/images/test_card_img.jpg');
-  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   color: #fff;

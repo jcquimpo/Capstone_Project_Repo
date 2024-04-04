@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 import './Navbar.css';
 import { Button } from './Button';
 import '@fortawesome/fontawesome-free/css/all.css';
@@ -23,6 +24,11 @@ function Navbar() {
     }
   };
 
+  const scrollToTop = () => {
+    scroll.scrollToTop({ smooth: true });
+    closeMobileMenu();
+  };
+
   useEffect(() => {
     showButton();
   }, []);
@@ -41,9 +47,9 @@ function Navbar() {
         </div>
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <li className='nav-item'>
-            <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+            <ScrollLink to='/' className='nav-links' smooth={true} duration={500} onClick={scrollToTop}>
               Home
-            </Link>
+            </ScrollLink>
           </li>
           <li className='nav-item'>
             <Link to='/profile' className='nav-links' onClick={closeMobileMenu}>
@@ -55,6 +61,7 @@ function Navbar() {
               Login
             </Link>
           </li>
+          {/* TODO: The register menu is supposed to be a dropdown menu - client and therapist register*/}
           <li className='nav-item'>
             <Link to='/registerclient' className='nav-links' onClick={closeMobileMenu}>
               Register Client
@@ -70,11 +77,10 @@ function Navbar() {
               My Therapist
             </Link>
           </li>
-          {/* The register menu is supposed to be a dropdown menu - client and therapist register*/}
           <li className='nav-item'>
-            <Link to='/aboutus' className='nav-links' onClick={closeMobileMenu}>
+            <ScrollLink to='about-us-section' className='nav-links' smooth={true} duration={500} offset={-100} onClick={closeMobileMenu}>
               About Us
-            </Link>
+            </ScrollLink>
           </li>
         </ul>
         {button && <Button buttonStyle='btn--outline'>Get Started</Button>}

@@ -146,8 +146,8 @@ function Home() {
                     </tbody>
                 </table>
             </div>
-            <div id="about-us-section"></div>
 
+            <div id="about-us-section"></div>
             <br></br>
             <br></br>
 
