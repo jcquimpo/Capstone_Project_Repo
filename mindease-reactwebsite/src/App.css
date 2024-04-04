@@ -112,6 +112,16 @@
   margin-bottom: 5px;
 }
 
+.radio-options {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
 .mytherapist {
   background-image: url('../public/images/test_card_img.jpg');
   background-position: center;

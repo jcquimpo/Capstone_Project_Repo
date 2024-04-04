@@ -23,7 +23,7 @@ export default function RegisterTherapist() {
             console.log('Therapist Specialization:', specialization);
             console.log('Therapist On Call:', onCall);
             console.log('Therapist Resume:', resume);
-            setPasswordMatchError(false); 
+            setPasswordMatchError(false);
         } else {
             setPasswordMatchError(true);
         }
@@ -43,20 +43,25 @@ export default function RegisterTherapist() {
                 <label htmlFor='confirmPassword'>Confirm Password:</label>
                 <input type='password' id='confirmPassword' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
                 {passwordMatchError && <p style={{ color: 'red' }}>Passwords do not match!</p>}
-                
                 <h3>Qualification Information</h3>
                 <label htmlFor='experience'>Years of Experience:</label>
                 <input type='text' id='experience' value={experience} onChange={(e) => setExperience(e.target.value)} />
                 <label htmlFor='specialization'>Specialization:</label>
                 <input type='text' id='specialization' value={specialization} onChange={(e) => setSpecialization(e.target.value)} />
-                <p>Are you willing to be on call 24/7?</p>
-                <input type='radio' id='onCallYes' name='onCall' value='Yes' onChange={(e) => setOnCall(e.target.value)} />
-                <label className='form-check-label' htmlFor='onCallYes'>Yes</label>
-                <input type='radio' id='onCallNo' name='onCall' value='No' onChange={(e) => setOnCall(e.target.value)} />
-                <label className='form-check-label' htmlFor='onCallNo'>No</label>
-                <label htmlFor='resume'>Upload Your Resume:</label>
-                <input type='file' id='resume' onChange={(e) => setResume(e.target.files[0])} accept='.pdf,.doc,.docx' />
-                <button type='submit'>Register</button>
+                <div className='form-group'>
+                    <p>Are you willing to be on call 24/7?</p>
+                    <div className='radio-options'>
+                        <input type='radio' id='onCallYes' name='onCall' value='Yes' onChange={(e) => setOnCall(e.target.value)} />
+                        <label htmlFor='onCallYes'>Yes</label>
+                        <input type='radio' id='onCallNo' name='onCall' value='No' onChange={(e) => setOnCall(e.target.value)} />
+                        <label htmlFor='onCallNo'>No</label>
+                    </div>
+                </div>
+                <div className='form-group'>
+                    <label htmlFor='resume'>Upload Your Resume:</label>
+                    <input type='file' id='resume' onChange={(e) => setResume(e.target.files[0])} accept='.pdf,.doc,.docx' />
+                    <button type='submit'>Register</button>
+                </div>
             </form>
         </div>
     );
