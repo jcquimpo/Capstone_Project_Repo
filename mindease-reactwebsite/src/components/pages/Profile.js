@@ -9,7 +9,8 @@ export default function Profile({ username, email }) {
         <h2 className="welcome-message text-success">Welcome!</h2>
         <p className="username">Hello, {username}</p>
       </div>
-      <button className="btn btn-danger" onClick={() => window.location.href = '/logout'}>
+      {/* <button className="btn btn-danger" onClick={() => window.location.href = '/logout'}> */}
+      <button className="btn btn-danger" onClick={() => window.location.href = '/'}>
         Logout
       </button>
 

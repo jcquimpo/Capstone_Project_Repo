@@ -1,6 +1,6 @@
 import React from 'react';
 import CardItem from './CardItem';
-import './Cards.css';
+import './styles/Cards.css';
 
 function Cards() {
   return (
@@ -9,9 +9,9 @@ function Cards() {
       <div className='cards_container'>
         <div className='cards_wrapper'>
             <ul className='cards_items'>
-                <CardItem src='images/test_card_img.jpg' text='sadge' label='a card' path='/'></CardItem>
-                <CardItem src='images/test_card_img2.jpg' text='poggers' label='another card' path='/'></CardItem>
-                <CardItem src='images/test_card_img3.jpg' text='hypers' label='and another card' path='/'></CardItem>
+                <CardItem src='images/test_card_img.jpg' text='Sadge' label='a card' path='/'></CardItem>
+                <CardItem src='images/test_card_img2.jpg' text='Poggers' label='another card' path='/'></CardItem>
+                <CardItem src='images/test_card_img3.jpg' text='Hypers' label='and another card' path='/'></CardItem>
             </ul>
         </div>
       </div>
