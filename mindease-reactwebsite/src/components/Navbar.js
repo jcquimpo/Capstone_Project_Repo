@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 import './Navbar.css';
 import { Button } from './Button';
@@ -9,6 +9,7 @@ import '@fortawesome/fontawesome-free/css/all.css';
 function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
+  const location = useLocation();
   // const [dropdown, setDropdown] = useState(false);
 
   const handleClick = () => setClick(!click);
@@ -33,7 +34,10 @@ function Navbar() {
     showButton();
   }, []);
 
-  window.addEventListener('resize', showButton);
+  useEffect(() => {
+    window.addEventListener('resize', showButton);
+    return () => window.removeEventListener('resize', showButton)
+  }, []);
 
   return (
     <nav className="navbar">
@@ -47,9 +51,15 @@ function Navbar() {
         </div>
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <li className='nav-item'>
-            <ScrollLink to='/' className='nav-links' smooth={true} duration={500} onClick={scrollToTop}>
-              Home
-            </ScrollLink>
+            {location.pathname === '/' ? (
+                <ScrollLink to='/' className='nav-links' smooth={true} duration={500} onClick={scrollToTop}>
+                  Home
+                </ScrollLink>
+              ) : (
+                <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+                  Home
+                </Link>
+              )}
           </li>
           <li className='nav-item'>
             <Link to='/profile' className='nav-links' onClick={closeMobileMenu}>
@@ -78,9 +88,15 @@ function Navbar() {
             </Link>
           </li>
           <li className='nav-item'>
-            <ScrollLink to='about-us-section' className='nav-links' smooth={true} duration={500} offset={-100} onClick={closeMobileMenu}>
-              About Us
-            </ScrollLink>
+            {location.pathname === '/' ? (
+                <ScrollLink to='about-us-section' className='nav-links' smooth={true} duration={500} onClick={closeMobileMenu}>
+                  About Us
+                </ScrollLink>
+              ) : (
+                <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+                  About Us
+                </Link>
+              )}
           </li>
         </ul>
         {button && <Button buttonStyle='btn--outline'>Get Started</Button>}
