@@ -27,6 +27,15 @@
   font-size: 100px;
 }
 
+.btn {
+  /* Prevent expansion on focus and active states */
+  &:focus,
+  &:active {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
 .login {
   color: #fff;
   font-size: 100px;
