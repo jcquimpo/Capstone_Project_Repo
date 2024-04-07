@@ -66,12 +66,8 @@ function Navbar() {
               Profile
             </Link>
           </li>
-          <li className='nav-item'>
-            <Link to='/login' className='nav-links' onClick={closeMobileMenu}>
-              Login
-            </Link>
-          </li>
           {/* TODO: The register menu is supposed to be a dropdown menu - client and therapist register*/}
+          {/* https://mdbootstrap.com/docs/react/navigation/navbar/ */}
           <li className='nav-item'>
             <Link to='/registerclient' className='nav-links' onClick={closeMobileMenu}>
               Register Client
@@ -89,7 +85,7 @@ function Navbar() {
           </li>
           <li className='nav-item'>
             {location.pathname === '/' ? (
-                <ScrollLink to='about-us-section' className='nav-links' smooth={true} duration={500} onClick={closeMobileMenu}>
+                <ScrollLink to='about-us-section' className='nav-links' smooth={true} duration={250} offset={-80} onClick={closeMobileMenu}>
                   About Us
                 </ScrollLink>
               ) : (
@@ -99,7 +95,7 @@ function Navbar() {
               )}
           </li>
         </ul>
-        {button && <Button buttonStyle='btn--outline'>Get Started</Button>}
+        {button && <Button buttonStyle='btn--outline btn-success'>Login</Button>}
       </div>
     </nav>
   );

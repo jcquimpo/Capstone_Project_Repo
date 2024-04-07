@@ -1,6 +1,5 @@
 import React from 'react';
 import '../../App.css';
-import styled from 'styled-components';
 import {
   MDBCol,
   MDBContainer,
@@ -9,22 +8,12 @@ import {
   MDBCardText,
   MDBCardBody,
   MDBCardImage,
-  MDBBtn,
   MDBCardTitle,
   MDBProgress,
   MDBProgressBar
 } from 'mdb-react-ui-kit';
 
-const StyledMDBBtn = styled(MDBBtn)`
-  /* Prevent expansion on focus and active states */
-  &:focus,
-  &:active {
-    box-shadow: none !important;
-    outline: none !important;
-  }
-`;
-
-export default function Profile({ username, email }) {
+export default function Profile({ username, email, name, age, mobile_num, gender, location, diagnosis, medicine, therapy_type, therapist }) {
   return (
     <section style={{ backgroundColor: '#fff' }}>
       <MDBContainer className="py-5">
@@ -34,8 +23,8 @@ export default function Profile({ username, email }) {
             <MDBCard className="mb-4">
               <MDBCardBody className="text-center">
                 <MDBCardImage src="/images/test_card_img.jpg" alt="Profile Picture" className="rounded-circle" style={{ width: '150px' }} fluid />
-                <p className="text-muted mb-1">Username: {username} Sadge</p>
-                <p className="text-muted mb-4">Email: {email} PepeSadge@pain.com</p>
+                <p className="text-muted mb-1">Username: {username} almostOK</p>
+                <p className="text-muted mb-4">Email: {email} almostOK@mail.com</p>
                 <div className="d-flex justify-content-center mb-2">
                   <button className="btn btn-danger me-2" onClick={() => window.location.href = '/'}>Logout</button>
                   <button className="btn btn-success me-2" onClick={() => window.location.href = '/'}>Chat with EaseChat</button>
@@ -54,7 +43,7 @@ export default function Profile({ username, email }) {
                     <MDBCardText>Name:</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9">
-                    <MDBCardText className="text-muted">Johnatan Smith</MDBCardText>
+                    <MDBCardText className="text-muted">{name} John Doe</MDBCardText>
                   </MDBCol>
                 </MDBRow>
                 <hr />
@@ -63,7 +52,7 @@ export default function Profile({ username, email }) {
                     <MDBCardText>Age:</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9">
-                    <MDBCardText className="text-muted">22</MDBCardText>
+                    <MDBCardText className="text-muted">{age} 22</MDBCardText>
                   </MDBCol>
                 </MDBRow>
                 <hr />
@@ -72,7 +61,7 @@ export default function Profile({ username, email }) {
                     <MDBCardText>Mobile</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9">
-                    <MDBCardText className="text-muted">(123) 456-7890</MDBCardText>
+                    <MDBCardText className="text-muted">{mobile_num} (123) 456-7890</MDBCardText>
                   </MDBCol>
                 </MDBRow>
                 <hr />
@@ -81,7 +70,7 @@ export default function Profile({ username, email }) {
                     <MDBCardText>Gender</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9">
-                    <MDBCardText className="text-muted">Male</MDBCardText>
+                    <MDBCardText className="text-muted">{gender} Male</MDBCardText>
                   </MDBCol>
                 </MDBRow>
                 <hr />
@@ -90,7 +79,7 @@ export default function Profile({ username, email }) {
                     <MDBCardText>Location</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9">
-                    <MDBCardText className="text-muted">Bay Area, San Francisco, CA</MDBCardText>
+                    <MDBCardText className="text-muted">{location} Bay Area, San Francisco, CA</MDBCardText>
                   </MDBCol>
                 </MDBRow>
               </MDBCardBody>
@@ -106,9 +95,9 @@ export default function Profile({ username, email }) {
                         <MDBCardText>Diagnosis:</MDBCardText>
                       </MDBCol>
                       <MDBCol sm="9">
-                        <MDBCardText className="text-muted">Anxiety</MDBCardText>
-                        <MDBCardText className="text-muted">PTSD</MDBCardText>
-                        <MDBCardText className="text-muted">Depression</MDBCardText>
+                        <MDBCardText className="text-muted">{diagnosis} Anxiety</MDBCardText>
+                        <MDBCardText className="text-muted">{diagnosis} PTSD</MDBCardText>
+                        <MDBCardText className="text-muted">{diagnosis} Depression</MDBCardText>
                       </MDBCol>
                     </MDBRow>
                     <hr />
@@ -117,7 +106,7 @@ export default function Profile({ username, email }) {
                         <MDBCardText>Medicine: </MDBCardText>
                       </MDBCol>
                       <MDBCol sm="9">
-                        <MDBCardText className="text-muted">To Be Prescribed</MDBCardText>
+                        <MDBCardText className="text-muted">{medicine} To Be Prescribed</MDBCardText>
                       </MDBCol>
                     </MDBRow>
                     <hr />
@@ -126,7 +115,7 @@ export default function Profile({ username, email }) {
                         <MDBCardText>Therapy: </MDBCardText>
                       </MDBCol>
                       <MDBCol sm="9">
-                        <MDBCardText className="text-muted">General Therapy</MDBCardText>
+                        <MDBCardText className="text-muted">{therapy_type} General Therapy</MDBCardText>
                       </MDBCol>
                     </MDBRow>
                     <hr />
@@ -135,7 +124,7 @@ export default function Profile({ username, email }) {
                         <MDBCardText>Therapist: </MDBCardText>
                       </MDBCol>
                       <MDBCol sm="9">
-                        <MDBCardText className="text-muted">Dr. Emily Smith, PhD</MDBCardText>
+                        <MDBCardText className="text-muted">{therapist} Dr. Emily Smith, PhD</MDBCardText>
                       </MDBCol>
                     </MDBRow>
                   </MDBCardBody>

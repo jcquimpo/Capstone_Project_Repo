@@ -3,8 +3,6 @@ import Cards from '../Cards';
 import Footer from '../Footer';
 import HeroSection from '../HeroSection'
 
-// TODO: fix styling for the home page
-
 function Home() {
     return (
         <div>
@@ -34,13 +32,15 @@ function Home() {
 
                         <div class="text-center">
                             <p>Start your journey to mental wellness with MindEase today!</p>
-                            <a class="btn btn-success btn-lg rounded" href="/get-started">Get Started</a>
+                            <a class="btn btn-success btn-lg rounded" href="/get-started" style={{ padding: '15px 30px', fontSize: '24px' }}>Get Started</a>
                         </div>
                     </div>
                     <div class="col-sm-3"></div>
                 </div>
             </div>
+
             <Cards />
+            
             <div class="container">
                 <div class="row">
                     <div class="col-sm-3"></div>
