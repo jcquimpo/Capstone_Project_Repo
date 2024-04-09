@@ -13,7 +13,9 @@ import {
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
-export default function SchedulePage({therapistID}) {
+export default function SchedulePage({ location }) {
+    const queryParams = new URLSearchParams(location.search);
+    const therapistID = queryParams.get('therapistID');
     const [selectedDate, setSelectedDate] = React.useState(new Date());
     const [modalOpen, setModalOpen] = React.useState(false);
 
@@ -61,7 +63,7 @@ export default function SchedulePage({therapistID}) {
                     <h2>Selected Therapist</h2>
                     <div className="card">
                         <div className="card-body">
-                            <h5 className="card-title">{therapistID.name}</h5>
+                            <h5 className="card-title">Name: {therapistID.name}</h5>
                             <p className="card-text">Role: {therapistID.role}</p>
                             <p className="card-text">Email: {therapistID.email}</p>
                             <p className="card-text">Phone: {therapistID.phone}</p>
