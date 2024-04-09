@@ -9,7 +9,7 @@ import {
   MDBTypography
 } from 'mdb-react-ui-kit';
 
-export default function TherapistCard({ name, role, email, phone, description, pfp }) {
+export default function TherapistCard({ name, role, email, phone, description, pfp, therapistID }) {
 
   return (
     <MDBCard className="mb-3" style={{ borderRadius: '.75rem', width: '600px' }}>
@@ -33,7 +33,7 @@ export default function TherapistCard({ name, role, email, phone, description, p
           <p className="text-muted">
             {description}
           </p>
-          <Link to='/schedule-meeting' className='btn btn-primary'>
+          <Link to={`/SchedulePage?therapistID=${therapistID}`} className='btn btn-primary'>
             Schedule Meeting
           </Link>
         </div>

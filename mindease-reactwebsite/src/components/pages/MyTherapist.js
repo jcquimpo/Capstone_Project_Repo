@@ -20,8 +20,8 @@ export default function MyTherapist() {
                     phone="123 456 789"
                     pfp="images/default_pfp.jpg"
                     description="A highly experienced psychiatrist specializing in various mental health disorders. 
-                    With a compassionate approach and deep expertise in medication management and therapy, she provides comprehensive care to her patients.
-                    "
+                    With a compassionate approach and deep expertise in medication management and therapy, she provides comprehensive care to her patients."
+                    therapistID={1357}
                 />
                 <TherapistCards
                     name="John Doe"
@@ -31,6 +31,7 @@ export default function MyTherapist() {
                     pfp="images/default_pfp.jpg"
                     description="A dedicated therapist with a focus on cognitive-behavioral therapy (CBT) and mindfulness-based approaches. 
                     He helps clients navigate life challenges, manage stress, and improve overall mental well-being through evidence-based interventions."
+                    therapistID={2468}
                 />
                 <TherapistCards
                     name="Jordan Smith"
@@ -40,6 +41,7 @@ export default function MyTherapist() {
                     pfp="images/default_pfp.jpg"
                     description="a licensed therapist known for his empathetic and client-centered approach. 
                     With a background in trauma-informed care and interpersonal therapy, he assists individuals in exploring their emotions, building resilience, and fostering healthy relationships."
+                    therapistID={3691}
                 />
             </div>
             <Footer />

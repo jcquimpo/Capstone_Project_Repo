@@ -9,6 +9,7 @@ import AboutUs from './components/pages/AboutUs';
 import RegisterClient from './components/pages/RegisterClient';
 import RegisterTherapist from './components/pages/RegisterTherapist';
 import MyTherpist from './components/pages/MyTherapist';
+import SchedulePage from './components/pages/SchedulePage';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/RegisterClient" element={<RegisterClient />} /> 
         <Route path="/RegisterTherapist" element={<RegisterTherapist />} /> 
         <Route path="/MyTherapist" element={<MyTherpist />} /> 
+        <Route path="/SchedulePage" element={<SchedulePage/>}/>
       </Routes>
     </Router>
     </>
