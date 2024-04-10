@@ -16,8 +16,9 @@ import 'react-calendar/dist/Calendar.css';
 
 export default function SchedulePage() {
     const { therapistID, name, email } = useParams();
-    const [selectedDate, setSelectedDate] = React.useState(new Date());
-    const [modalOpen, setModalOpen] = React.useState(false);
+    const [selectedDate, setSelectedDate] = useState(new Date());
+    const [modalOpen, setModalOpen] = useState(false);
+
 
     const handleDateChange = (date) => {
         setSelectedDate(date);
