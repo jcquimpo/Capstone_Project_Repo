@@ -33,7 +33,7 @@ export default function TherapistCard({ name, role, email, phone, description, p
           <p className="text-muted">
             {description}
           </p>
-          <Link to={`/SchedulePage?therapistID=${therapistID}`} className='btn btn-primary'>
+          <Link to={`/SchedulePage/${therapistID}?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}`} className='btn btn-primary'>
             Schedule Meeting
           </Link>
         </div>
@@ -41,4 +41,3 @@ export default function TherapistCard({ name, role, email, phone, description, p
     </MDBCard>
   );
 }
-

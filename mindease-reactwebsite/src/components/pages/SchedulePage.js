@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import Footer from '../Footer';
 import {
     MDBContainer,
@@ -13,9 +14,8 @@ import {
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
-export default function SchedulePage({ location }) {
-    const queryParams = new URLSearchParams(location.search);
-    const therapistID = queryParams.get('therapistID');
+export default function SchedulePage() {
+    const { therapistID, name, email } = useParams();
     const [selectedDate, setSelectedDate] = React.useState(new Date());
     const [modalOpen, setModalOpen] = React.useState(false);
 
@@ -63,10 +63,9 @@ export default function SchedulePage({ location }) {
                     <h2>Selected Therapist</h2>
                     <div className="card">
                         <div className="card-body">
-                            <h5 className="card-title">Name: {therapistID.name}</h5>
-                            <p className="card-text">Role: {therapistID.role}</p>
-                            <p className="card-text">Email: {therapistID.email}</p>
-                            <p className="card-text">Phone: {therapistID.phone}</p>
+                            <h5 className="card-title">Name: {name}</h5>
+                            <h5 className="card-text">Email: {email}</h5>
+                            <h5 className='card-text'>Therapist ID: {therapistID}</h5>
                             <button className="btn btn-primary" onClick={handleSchedule}>
                                 Schedule Appointment
                             </button>
@@ -78,5 +77,3 @@ export default function SchedulePage({ location }) {
         </div>
     );
 }
-
-

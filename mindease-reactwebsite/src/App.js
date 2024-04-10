@@ -24,7 +24,7 @@ function App() {
         <Route path="/RegisterClient" element={<RegisterClient />} /> 
         <Route path="/RegisterTherapist" element={<RegisterTherapist />} /> 
         <Route path="/MyTherapist" element={<MyTherpist />} /> 
-        <Route path="/SchedulePage" element={<SchedulePage/>}/>
+        <Route path="/SchedulePage/:therapistID" element={<SchedulePage/>} />
       </Routes>
     </Router>
     </>
