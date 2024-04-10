@@ -3,23 +3,52 @@ import '../../App.css';
 
 export default function RegisterClient() {
 
+    const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
-    const [email, setEmail] = useState('');
+    const [loginError, setLoginError] = useState('');
     const [passwordMatchError, setPasswordMatchError] = useState(false);
 
-    const handleSubmit = (e) => {
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     if (password === confirmPassword) {
+    //         console.log('Client Username:', username);
+    //         console.log('Client Password:', password);
+    //         console.log('Client Email:', email);
+    //         setPasswordMatchError(false); 
+    //     } else {
+    //         setPasswordMatchError(true);
+    //     }
+    // };
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (password === confirmPassword) {
-            console.log('Client Username:', username);
-            console.log('Client Password:', password);
-            console.log('Client Email:', email);
-            setPasswordMatchError(false); 
+            try {
+                const response = await fetch('YOUR_LOGIN_API_ENDPOINT', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ username, password }),
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log('Login Successful:', data);
+                    setLoginError('');
+                } else {
+                    setLoginError('Invalid username or password');
+                }
+            } catch (error) {
+                console.error('Login Error:', error);
+                setLoginError('An error occurred during login');
+            }
         } else {
             setPasswordMatchError(true);
         }
     };
+
 
     return (
         <div>
