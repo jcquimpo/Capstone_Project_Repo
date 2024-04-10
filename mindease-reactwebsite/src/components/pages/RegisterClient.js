@@ -1,54 +1,39 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import '../../App.css';
 
 export default function RegisterClient() {
-
     const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [loginError, setLoginError] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
     const [passwordMatchError, setPasswordMatchError] = useState(false);
-
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     if (password === confirmPassword) {
-    //         console.log('Client Username:', username);
-    //         console.log('Client Password:', password);
-    //         console.log('Client Email:', email);
-    //         setPasswordMatchError(false); 
-    //     } else {
-    //         setPasswordMatchError(true);
-    //     }
-    // };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        console.log('Form submitted');
         if (password === confirmPassword) {
             try {
-                const response = await fetch('YOUR_LOGIN_API_ENDPOINT', {
+                const response = await fetch('http://localhost:5000/users', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                    body: JSON.stringify({ username, password }),
+                    body: JSON.stringify({ email, username, password }),
                 });
 
                 if (response.ok) {
                     const data = await response.json();
-                    console.log('Login Successful:', data);
-                    setLoginError('');
+                    console.log('Registration Successful:', data);
                 } else {
-                    setLoginError('Invalid username or password');
+                    console.error('Registration Failed:', response.statusText);
                 }
             } catch (error) {
-                console.error('Login Error:', error);
-                setLoginError('An error occurred during login');
+                console.error('Registration Error:', error);
             }
         } else {
             setPasswordMatchError(true);
         }
     };
-
 
     return (
         <div>
@@ -66,5 +51,5 @@ export default function RegisterClient() {
                 <button type='submit'>Register</button>
             </form>
         </div>
-    )
+    );
 }
