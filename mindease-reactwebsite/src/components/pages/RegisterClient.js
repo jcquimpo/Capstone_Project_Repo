@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../../App.css';
 
 export default function RegisterClient() {
@@ -7,6 +8,9 @@ export default function RegisterClient() {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [passwordMatchError, setPasswordMatchError] = useState(false);
+    const [registrationSuccess, setRegistrationSuccess] = useState(false);
+
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -24,6 +28,9 @@ export default function RegisterClient() {
                 if (response.ok) {
                     const data = await response.json();
                     console.log('Registration Successful:', data);
+                    setRegistrationSuccess(true);
+
+                    navigate('/login');
                 } else {
                     console.error('Registration Failed:', response.statusText);
                 }
@@ -50,6 +57,12 @@ export default function RegisterClient() {
                 {passwordMatchError && <p style={{ color: 'red' }}>Passwords do not match!</p>}
                 <button type='submit'>Register</button>
             </form>
+            {registrationSuccess && (
+                <>
+                    <p style={{ color: 'green' }}>Registration Successful!</p>
+                    {window.location.href = '/login'}
+                </>
+            )}
         </div>
     );
 }
