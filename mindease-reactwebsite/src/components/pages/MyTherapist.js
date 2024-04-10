@@ -26,7 +26,7 @@ export default function MyTherapist() {
                 <TherapistCards
                     name="John Doe"
                     role="Therapist"
-                    email="pog@pogchamp.com"
+                    email="JDoe@mail.com"
                     phone="987 654 321"
                     pfp="images/default_pfp.jpg"
                     description="A dedicated therapist with a focus on cognitive-behavioral therapy (CBT) and mindfulness-based approaches. 
