@@ -13,32 +13,13 @@ function Footer() {
                 <p className='footer-information-text'>
                     Talk with Us!
                 </p>
-                <div className='input-areas'>
-                    <form>
-                        <input type='email' name='email' placeholder='Email' className='footer-input' />
-                        <Button buttonStyle='btn--outline'>Submit</Button>
-                    </form>
-                </div>
             </section>
             <div className='footer-links'>
                 <div className='footer-link-wrapper'>
                     <div className='footer-link-items'>
                         <h2>Contact Us</h2>
-                        <Link to='/login'>How it Works 1</Link>
-                        <Link to='/profile'>How it Works 2</Link>
-                        <Link to='/register_client'>How it Works 3</Link>
-                    </div>
-                    <div className='footer-link-items'>
-                        <h2>Contact Us</h2>
-                        <Link to='/login'>How it Works 1</Link>
-                        <Link to='/profile'>How it Works 2</Link>
-                        <Link to='/register_client'>How it Works 3</Link>
-                    </div>
-                    <div className='footer-link-items'>
-                        <h2>Contact Us</h2>
-                        <Link to='/login'>How it Works 1</Link>
-                        <Link to='/profile'>How it Works 2</Link>
-                        <Link to='/register_client'>How it Works 3</Link>
+                        <Link to='/login'>MindEase@mail.com</Link>
+                        <Link to='/profile'>123-456-7890</Link>
                     </div>
                 </div>
             </div>

@@ -10,6 +10,7 @@ import RegisterClient from './components/pages/RegisterClient';
 import RegisterTherapist from './components/pages/RegisterTherapist';
 import MyTherpist from './components/pages/MyTherapist';
 import SchedulePage from './components/pages/SchedulePage';
+import ChatbotPage from './components/pages/ChatbotPage';
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
         <Route path="/RegisterTherapist" element={<RegisterTherapist />} /> 
         <Route path="/MyTherapist" element={<MyTherpist />} /> 
         <Route path="/SchedulePage/:therapistID" element={<SchedulePage/>} />
+        <Route path="/ChatbotPage" element={<ChatbotPage/>}/>
       </Routes>
     </Router>
     </>
