@@ -13,6 +13,7 @@ export default function RegisterTherapist() {
     const [resume, setResume] = useState(null);
     const [passwordMatchError, setPasswordMatchError] = useState(false);
 
+    // Register Therapist function - afterwards redirects to the login page
     const handleSubmit = (e) => {
         e.preventDefault();
         if (password === confirmPassword) {
@@ -50,7 +51,7 @@ export default function RegisterTherapist() {
                 <input type='text' id='specialization' value={specialization} onChange={(e) => setSpecialization(e.target.value)} />
                 <div className='form-group'>
                     <p>Are you willing to be on call 24/7?</p>
-                    <br/>
+                    <br />
                     <div className='radio-options'>
                         <input type='radio' id='onCallYes' name='onCall' value='Yes' onChange={(e) => setOnCall(e.target.value)} />
                         <label htmlFor='onCallYes'>Yes</label>

@@ -12,6 +12,7 @@ export default function RegisterClient() {
 
     const navigate = useNavigate();
 
+    // Register Client function - afterwards redirects to the login page
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log('Form submitted');

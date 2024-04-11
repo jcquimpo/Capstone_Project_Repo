@@ -6,6 +6,7 @@ export default function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
+    // Login Function - should redirect to the profile
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('Username:', username);
