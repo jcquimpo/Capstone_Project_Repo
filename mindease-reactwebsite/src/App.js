@@ -11,7 +11,7 @@ import RegisterTherapist from './components/pages/RegisterTherapist';
 import MyTherpist from './components/pages/MyTherapist';
 import SchedulePage from './components/pages/SchedulePage';
 
-function App() {
+export default function App() {
   return (
     <>
     <Router>
@@ -30,4 +30,3 @@ function App() {
     </>
   );
 }
-export default App;

@@ -15,10 +15,13 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
 export default function SchedulePage() {
-    const { therapistID, name, email } = useParams();
+    const { therapistID } = useParams();
     const [selectedDate, setSelectedDate] = useState(new Date());
     const [modalOpen, setModalOpen] = useState(false);
 
+    const urlParams = new URLSearchParams(window.location.search);
+    const name = urlParams.get('name');
+    const email = urlParams.get('email');
 
     const handleDateChange = (date) => {
         setSelectedDate(date);
@@ -26,6 +29,9 @@ export default function SchedulePage() {
 
     const handleSchedule = () => {
         setModalOpen(true);
+        console.log('name: ', name);
+        console.log('email: ', email);
+        console.log('therapistID: ', therapistID);
     };
 
     return (
