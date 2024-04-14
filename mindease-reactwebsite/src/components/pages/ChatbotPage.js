@@ -23,6 +23,7 @@ export default function ChatbotPage() {
                     </div>
                 </div>
                 <div className='lowerSide'>
+                    {/* make the Home a link to be a link to the home page?  */}
                     <div className='listItems'><img src='' alt='' className='listitemsImg' />Home</div>
                     <div className='listItems'><img src='' alt='' className='listitemsImg' />Saved</div>
                     <div className='listItems'><img src='' alt='' className='listitemsImg' />Upgrade</div>
