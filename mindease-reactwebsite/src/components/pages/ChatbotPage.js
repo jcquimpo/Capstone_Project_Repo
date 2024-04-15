@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../App.css';
-import '../styles/Chatbot_styles.css';
+import './Chatbot_styles.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 
 // these icons are NOT actually in the public folder - using this code as a reminder/reference for what we need 
