@@ -76,9 +76,15 @@ function Navbar() {
             </Link>
           </li>
           <li className='nav-item'>
-            <Link to='/mytherapist' className='nav-links' onClick={closeMobileMenu}>
-              My Therapist
-            </Link>
+            {location.pathname === '/' ? (
+                <ScrollLink to='myTherapist-section' className='nav-links' smooth={true} duration={250} offset={-80} onClick={closeMobileMenu}>
+                  My Therapist
+                </ScrollLink>
+              ) : (
+                <Link to='/mytherapist' className='nav-links' onClick={closeMobileMenu}>
+                  My Therapist
+                </Link>
+              )}
           </li>
           <li className='nav-item'>
             {location.pathname === '/' ? (

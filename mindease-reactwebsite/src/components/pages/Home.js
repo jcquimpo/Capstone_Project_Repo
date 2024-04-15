@@ -22,7 +22,7 @@ function Home() {
                             <h2 style={{ whiteSpace: 'nowrap' }}>How does MindEase work?</h2>
                             <p>Welcome to MindEase, your personalized AI therapy companion!</p>
                         </div>
-                        <ol style={{whiteSpace: 'nowrap'}}>
+                        <ol style={{ whiteSpace: 'nowrap' }}>
                             <li>Sign up or log in to your MindEase account.</li>
                             <li>Take the initial assessment to personalize your therapy journey.</li>
                             <li>Explore various therapy modules based on your needs.</li>
@@ -32,14 +32,55 @@ function Home() {
 
                         <div class="text-center">
                             <p>Start your journey to mental wellness with MindEase today!</p>
-                            <a class="btn btn-success btn-lg rounded" href="/get-started" style={{ padding: '15px 30px', fontSize: '24px' }}>Get Started</a>
+                            <a class="btn btn-success btn-lg rounded" href="/registerClient" style={{ padding: '15px 30px', fontSize: '24px' }}>Get Started</a>
                         </div>
                     </div>
                     <div class="col-sm-3"></div>
                 </div>
             </div>
 
-            <Cards />
+            <div id="myTherapist-section"></div>
+            <br></br>
+            <br></br>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-6">
+                        <div class="text-center">
+                            <h2 style={{ whiteSpace: 'nowrap' }}>Lookng for a Therapist?</h2>
+                            <p>Looking for the right therapist or coach can be quite the journey. You might be wondering:</p>
+                        </div>
+                        <ul style={{ whiteSpace: 'nowrap' }}>
+                            <li>
+                                How do I find someone nearby?
+                            </li>
+                            <li>
+                                Do they accept my insurance?
+                            </li>
+                            <li>
+                                Will they comprehend what I'm experiencing?
+                            </li>
+                            <li>
+                                Can they truly assist me?
+                            </li>
+                            <li>
+                                Will our personalities mesh well?
+                            </li>
+                        </ul>
+                        <p>MindEase's directory simplifies this process, allowing you to search for a therapist or coach based on their location and expertise.
+                            You can review their qualifications, understand the issues they address, and gauge if they're a good fit for you.
+                        </p>
+                        <div class="text-center">
+                            <a class="btn btn-success btn-lg rounded" href="/mytherapist" style={{ padding: '15px 30px', fontSize: '24px' }}>Find a Therapist</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+            </div>
+
+            <br />
+            <br />
             
             <div class="container">
                 <div class="row">
