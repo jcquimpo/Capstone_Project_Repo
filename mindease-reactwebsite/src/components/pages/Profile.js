@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../App.css';
 import {
   MDBCol,
@@ -14,6 +14,11 @@ import {
 } from 'mdb-react-ui-kit';
 
 export default function Profile({ username, email, name, age, mobile_num, gender, location, diagnosis, medicine, therapy_type, therapist }) {
+  
+  const redirectToStreamlit = () => {
+    window.location.href = 'http://localhost:8501/'; // Replace with your Streamlit app URL
+  };
+
   return (
     <section style={{ backgroundColor: '#fff' }}>
       <MDBContainer className="py-5">
@@ -27,7 +32,10 @@ export default function Profile({ username, email, name, age, mobile_num, gender
                 <p className="text-muted mb-4">Email: {email} almostOK@mail.com</p>
                 <div className="d-flex justify-content-center mb-2">
                   <button className="btn btn-danger me-2" onClick={() => window.location.href = '/'}>Logout</button>
-                  <button className="btn btn-success me-2" onClick={() => window.location.href = '/ChatbotPage'}>Chat with EaseChat</button>
+                  {/* <button className="btn btn-success me-2" onClick={() => window.location.href = '/ChatbotPage'}>Chat with EaseChat</button> */}
+
+                  <button className="btn btn-success me-2" onClick={redirectToStreamlit}>Go to Streamlit App</button>
+
                   <button className="btn btn-success" onClick={() => window.location.href = '/MyTherapist'}>Connect with a Therapist</button>
                 </div>
               </MDBCardBody>
@@ -137,17 +145,17 @@ export default function Profile({ username, email, name, age, mobile_num, gender
                     <MDBCardText className="mb-4">Medical Treatment Progress</MDBCardText>
                     <div className="text-custom mt-4 mb-1" style={{ fontSize: '.77rem', color: 'black' }}>Diagnosis & Medication</div>
                     <MDBProgress className="rounded" style={{ backgroundColor: '	#D3D3D3' }}>
-                       <MDBProgressBar width={80} valuemin={0} valuemax={100} style={{ backgroundColor: 'green' }} />
+                      <MDBProgressBar width={80} valuemin={0} valuemax={100} style={{ backgroundColor: 'green' }} />
                     </MDBProgress>
 
                     <div className="text-custom mt-4 mb-1" style={{ fontSize: '.77rem', color: 'black' }}>Therapy Sessions</div>
                     <MDBProgress className="rounded" style={{ backgroundColor: '	#D3D3D3' }}>
-                       <MDBProgressBar width={72} valuemin={0} valuemax={100} style={{ backgroundColor: 'green' }} />
+                      <MDBProgressBar width={72} valuemin={0} valuemax={100} style={{ backgroundColor: 'green' }} />
                     </MDBProgress>
 
                     <div className="text-custom mt-4 mb-1" style={{ fontSize: '.77rem', color: 'black' }}>Progress Evaluation</div>
                     <MDBProgress className="rounded" style={{ backgroundColor: '	#D3D3D3' }}>
-                       <MDBProgressBar width={89} valuemin={0} valuemax={100} style={{ backgroundColor: 'green' }} />
+                      <MDBProgressBar width={89} valuemin={0} valuemax={100} style={{ backgroundColor: 'green' }} />
                     </MDBProgress>
 
                     <div className="text-custom mt-4 mb-1" style={{ fontSize: '.77rem', color: 'black' }}>Overall Mental Well-being</div>
