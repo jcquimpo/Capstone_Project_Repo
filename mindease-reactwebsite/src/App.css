@@ -131,7 +131,7 @@
 }
 
 .mytherapist {
-  background-image: url('../public/images/test_card_img.jpg');
+  /* background-image: url('../public/images/test_card_img.jpg'); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -140,7 +140,7 @@
 }
 
 .aboutus {
-  background-image: url('../public/images/test_card_img2.jpg');
+  /* background-image: url('../public/images/test_card_img2.jpg'); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
