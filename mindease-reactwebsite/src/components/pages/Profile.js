@@ -27,9 +27,9 @@ export default function Profile({ username, email, name, age, mobile_num, gender
           <MDBCol lg="4">
             <MDBCard className="mb-4">
               <MDBCardBody className="text-center">
-                <MDBCardImage src="/images/test_card_img.jpg" alt="Profile Picture" className="rounded-circle" style={{ width: '150px' }} fluid />
-                <p className="text-muted mb-1">Username: {username} almostOK</p>
-                <p className="text-muted mb-4">Email: {email} almostOK@mail.com</p>
+                <MDBCardImage src="/images/default_pfp.jpg" alt="Profile Picture" className="rounded-circle" style={{ width: '150px' }} fluid />
+                <p className="text-muted mb-1">Username: {username} example</p>
+                <p className="text-muted mb-4">Email: {email} example@mail.com</p>
                 <div className="d-flex justify-content-center mb-2">
                   <button className="btn btn-danger me-2" onClick={() => window.location.href = '/'}>Logout</button>
                   {/* <button className="btn btn-success me-2" onClick={() => window.location.href = '/ChatbotPage'}>Chat with EaseChat</button> */}

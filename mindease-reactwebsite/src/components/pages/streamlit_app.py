@@ -14,6 +14,7 @@ def main():
     set_cors_headers()
     st.title('Streamlit Example')
     st.write('This is a Streamlit app.')
+    st.write('T E S T I N G')
 
     data = fetch_data()
     st.write('Data from external API:', data)
