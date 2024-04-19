@@ -17,7 +17,7 @@ function Footer() {
             <div className='footer-links'>
                 <div className='footer-link-wrapper'>
                     <div className='footer-link-items'>
-                        <h2>Contact Us</h2>
+                        <h2>Contact Us Here!</h2>
                         <Link to='/login'>MindEase@mail.com</Link>
                         <Link to='/profile'>123-456-7890</Link>
                     </div>

@@ -4,6 +4,7 @@ import '../../App.css';
 
 export default function RegisterClient() {
     const [email, setEmail] = useState('');
+    const [mobile, setMobile] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -49,6 +50,8 @@ export default function RegisterClient() {
             <form onSubmit={handleSubmit} className='register_client-form'>
                 <label htmlFor='email'>Email:</label>
                 <input type='email' id='email' value={email} onChange={(e) => setEmail(e.target.value)} />
+                <label htmlFor='mobile'>Mobile:</label>
+                <input type='mobile' id='mobile' value={mobile} onChange={(e) => setMobile(e.target.value)} />
                 <label htmlFor='username'>Username:</label>
                 <input type='text' id='username' value={username} onChange={(e) => setUsername(e.target.value)} />
                 <label htmlFor='password'>Password:</label>
