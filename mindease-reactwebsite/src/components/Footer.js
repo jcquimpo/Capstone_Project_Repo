@@ -18,7 +18,7 @@ function Footer() {
                 <div className='footer-link-wrapper'>
                     <div className='footer-link-items'>
                         <h2>Contact Us Here!</h2>
-                        <Link to='/login'>MindEase@mail.com</Link>
+                        <Link to='/login'>ClarityMind@mail.com</Link>
                         <Link to='/profile'>123-456-7890</Link>
                     </div>
                 </div>
@@ -27,10 +27,10 @@ function Footer() {
                 <div className='social-media-wrap'>
                     <div className='footer-logo'>
                         <Link className='social-logo'>
-                            MindEase <i className='fab fa-typo3' />
+                            Clarity Mind <i className='fab fa-typo3' />
                         </Link>
                     </div>
-                    <small className='website-rights'>MindEase © 20xx</small>
+                    <small className='website-rights'>Clarity Mind © 20xx</small>
                     <div className='social-icons'>
                         <Link className='social-icon-link' to='/' target='_blank' aria-label='Facebook'>
                             <i className='fab fa-facebook-f'></i>

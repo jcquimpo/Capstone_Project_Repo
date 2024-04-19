@@ -39,7 +39,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-        MindEase
+        Clarity Mind
         <i className='fab fa-typo3' />
       </Link>
       <div className="navbar-container">
