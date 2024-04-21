@@ -18,8 +18,8 @@ def main():
 
     data = fetch_data()
     st.write('Data from external API:', data)
-    
-    # Create a button in Streamlit
+
+    # TODO: Create a button in Streamlit
     if st.button('Return to React App'):
         # Redirect to the React app URL when the button is clicked
         st.markdown('<a href="http://localhost:3000">Click here to return to React App</a>', unsafe_allow_html=True)

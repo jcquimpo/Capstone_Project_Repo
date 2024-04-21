@@ -15,6 +15,7 @@ import {
 
 export default function Profile({ username, email, name, age, mobile_num, gender, location, diagnosis, medicine, therapy_type, therapist }) {
   
+  // TODO: for redirection to streamlit
   const redirectToStreamlit = () => {
     window.location.href = 'http://localhost:8501/'; 
     // window.location.href = 'https://deployed-streamlit-app-url.com';
