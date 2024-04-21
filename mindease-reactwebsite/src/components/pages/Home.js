@@ -6,6 +6,8 @@ function Home() {
     return (
         <div>
             <HeroSection imageUrl={'/images/home_img.jpg'} title={'Welcome to Clarity Mind'} subtitle={'Better Mental Health Starts Here!'}/>
+            <br></br>
+
             <div class="container">
                 <div class="text-center">
                     <h1>Welcome to Clarity Mind</h1>
@@ -79,9 +81,10 @@ function Home() {
             </div>
 
             <br />
-            <br />
-            
+            <br></br>
             <HeroSection imageUrl={'/images/home_img2.jpg'} title={''} subtitle={''}/>
+            <br></br>
+
 
             <div class="container">
                 <div class="row">
@@ -189,11 +192,12 @@ function Home() {
                 </table>
             </div>
 
+            <br></br>
+            <HeroSection imageUrl={'/images/home_img3.jpg'} title={''} subtitle={''}/>
+            <br></br>
             <div id="about-us-section"></div>
             <br></br>
-            <br></br>
 
-            <HeroSection imageUrl={'/images/home_img3.jpg'} title={''} subtitle={''}/>
 
             <div class="container">
                 <div class="text-center">
@@ -233,6 +237,12 @@ function Home() {
                     Through our AI software, we want to enable individuals to build resilience, cultivate emotional well-being, and lead fulfilling lives. Join us on this transformative journey as we harness the potential of AI to revolutionize mental health support.
                     At Clarity Mind, we are committed to helping individuals thrive, one step at a time.</p>
             </div>
+
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+
             <Footer />
         </div>
     );

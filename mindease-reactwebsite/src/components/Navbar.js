@@ -88,7 +88,7 @@ function Navbar() {
           </li>
           <li className='nav-item'>
             {location.pathname === '/' ? (
-                <ScrollLink to='about-us-section' className='nav-links' smooth={true} duration={250} offset={-80} onClick={closeMobileMenu}>
+                <ScrollLink to='about-us-section' className='nav-links' smooth={true} duration={250} offset={-150} onClick={closeMobileMenu}>
                   About Us
                 </ScrollLink>
               ) : (
