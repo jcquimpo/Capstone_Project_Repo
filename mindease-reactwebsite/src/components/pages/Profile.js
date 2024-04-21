@@ -35,7 +35,7 @@ export default function Profile({ username, email, name, age, mobile_num, gender
                   <button className="btn btn-danger me-2" onClick={() => window.location.href = '/'}>Logout</button>
                   {/* <button className="btn btn-success me-2" onClick={() => window.location.href = '/ChatbotPage'}>Chat with EaseChat</button> */}
 
-                  <button className="btn btn-success me-2" onClick={redirectToStreamlit}>Go to Streamlit App</button>
+                  <button className="btn btn-success me-2" onClick={redirectToStreamlit}>Chat with Clarity Chat</button>
 
                   <button className="btn btn-success" onClick={() => window.location.href = '/MyTherapist'}>Connect with a Therapist</button>
                 </div>

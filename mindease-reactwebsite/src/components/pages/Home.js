@@ -1,12 +1,11 @@
 import '../../App.css'
-import Cards from '../Cards';
 import Footer from '../Footer';
 import HeroSection from '../HeroSection'
 
 function Home() {
     return (
         <div>
-            <HeroSection />
+            <HeroSection imageUrl={'/images/home_img.jpg'} title={'Welcome to Clarity Mind'} subtitle={'Better Mental Health Starts Here!'}/>
             <div class="container">
                 <div class="text-center">
                     <h1>Welcome to Clarity Mind</h1>
@@ -82,6 +81,8 @@ function Home() {
             <br />
             <br />
             
+            <HeroSection imageUrl={'/images/home_img2.jpg'} title={''} subtitle={''}/>
+
             <div class="container">
                 <div class="row">
                     <div class="col-sm-3"></div>
@@ -191,6 +192,8 @@ function Home() {
             <div id="about-us-section"></div>
             <br></br>
             <br></br>
+
+            <HeroSection imageUrl={'/images/home_img3.jpg'} title={''} subtitle={''}/>
 
             <div class="container">
                 <div class="text-center">
