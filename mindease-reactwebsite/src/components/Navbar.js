@@ -49,7 +49,7 @@ function Navbar() {
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <li className='nav-item'>
             {location.pathname === '/' ? (
-                <ScrollLink to='/' className='nav-links' smooth={true} duration={500} onClick={scrollToTop}>
+                <ScrollLink to='/' className='nav-links' smooth={true} duration={100} onClick={scrollToTop}>
                   Home
                 </ScrollLink>
               ) : (
@@ -77,7 +77,7 @@ function Navbar() {
           </li>
           <li className='nav-item'>
             {location.pathname === '/' ? (
-                <ScrollLink to='myTherapist-section' className='nav-links' smooth={true} duration={250} offset={-80} onClick={closeMobileMenu}>
+                <ScrollLink to='myTherapist-section' className='nav-links' smooth={true} duration={100} offset={-80} onClick={closeMobileMenu}>
                   My Therapist
                 </ScrollLink>
               ) : (
@@ -88,7 +88,7 @@ function Navbar() {
           </li>
           <li className='nav-item'>
             {location.pathname === '/' ? (
-                <ScrollLink to='about-us-section' className='nav-links' smooth={true} duration={250} offset={-150} onClick={closeMobileMenu}>
+                <ScrollLink to='about-us-section' className='nav-links' smooth={true} duration={100} offset={-150} onClick={closeMobileMenu}>
                   About Us
                 </ScrollLink>
               ) : (
