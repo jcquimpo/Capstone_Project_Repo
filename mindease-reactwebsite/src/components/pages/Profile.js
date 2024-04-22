@@ -34,9 +34,12 @@ export default function Profile({ username, email, name, age, mobile_num, gender
                 <p className="text-muted mb-4">Email: {email} example@mail.com</p>
                 <div className="d-flex justify-content-center mb-2">
                   <button className="btn btn-danger me-2" onClick={() => window.location.href = '/'}>Logout</button>
+                  
                   {/* <button className="btn btn-success me-2" onClick={() => window.location.href = '/ChatbotPage'}>Chat with EaseChat</button> */}
 
-                  <button className="btn btn-success me-2" onClick={redirectToStreamlit}>Chat with Clarity Chat</button>
+                  {/* <button className="btn btn-success me-2" onClick={redirectToStreamlit}>Chat with Clarity Chat</button> */}
+
+                  <button className="btn btn-success me-2" onClick={() => window.location.href = '/ImbedPageTest'}>Chat with Clarity Chat</button>
 
                   <button className="btn btn-success" onClick={() => window.location.href = '/MyTherapist'}>Connect with a Therapist</button>
                 </div>

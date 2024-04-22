@@ -11,6 +11,7 @@ import RegisterTherapist from './components/pages/RegisterTherapist';
 import MyTherpist from './components/pages/MyTherapist';
 import SchedulePage from './components/pages/SchedulePage';
 import ChatbotPage from './components/pages/ChatbotPage';
+import ImbedPageTest from './components/pages/ImbedPageTest'
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
         <Route path="/MyTherapist" element={<MyTherpist />} /> 
         <Route path="/SchedulePage/:therapistID" element={<SchedulePage/>} />
         <Route path="/ChatbotPage" element={<ChatbotPage/>}/>
+        <Route path="/ImbedPageTest" element={<ImbedPageTest />} /> 
       </Routes>
     </Router>
     </>
