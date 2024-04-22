@@ -19,7 +19,6 @@
   font-size: 3rem;
 }
 
-/* TODO: need to style profile page */
 .profile {
   background-size: cover;
   background-repeat: no-repeat;
@@ -50,6 +49,7 @@
 
 .login-heading {
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .login-form input,
@@ -78,6 +78,7 @@
 
 .register_client-heading {
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .register_client-form input,
@@ -106,6 +107,7 @@
 
 .register_therapist-heading {
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .register_therapist-form input,
@@ -131,7 +133,6 @@
 }
 
 .mytherapist {
-  /* background-image: url('../public/images/test_card_img.jpg'); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -140,7 +141,6 @@
 }
 
 .aboutus {
-  /* background-image: url('../public/images/test_card_img2.jpg'); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
