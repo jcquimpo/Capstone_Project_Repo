@@ -17,7 +17,7 @@ export default function Profile({ username, email, name, age, mobile_num, gender
   
   // TODO: for redirection to streamlit
   const redirectToStreamlit = () => {
-    window.location.href = 'http://localhost:8501/'; 
+    window.location.href = 'https://mindeasechatbot.streamlit.app/'; 
     // window.location.href = 'https://deployed-streamlit-app-url.com';
   };
 
@@ -35,8 +35,6 @@ export default function Profile({ username, email, name, age, mobile_num, gender
                 <div className="d-flex justify-content-center mb-2">
                   <button className="btn btn-danger me-2" onClick={() => window.location.href = '/'}>Logout</button>
                   
-                  {/* <button className="btn btn-success me-2" onClick={() => window.location.href = '/ChatbotPage'}>Chat with EaseChat</button> */}
-
                   {/* <button className="btn btn-success me-2" onClick={redirectToStreamlit}>Chat with Clarity Chat</button> */}
 
                   <button className="btn btn-success me-2" onClick={() => window.location.href = '/ImbedPageTest'}>Chat with Clarity Chat</button>

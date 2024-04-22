@@ -5,7 +5,9 @@ function StreamlitEmbed() {
     <div className="streamlit-container">
       <iframe
         title="Streamlit App"
-        src="http://localhost:8501" // Adjust the port if needed
+        // src="http://localhost:8501" // Adjust the port if needed
+        // ?embedded=true - needs to be added AFTER the streamlit app
+        src="https://mindeasechatbot.streamlit.app/?embedded=true"
         style={{
           position: 'fixed',
           top: 0,
