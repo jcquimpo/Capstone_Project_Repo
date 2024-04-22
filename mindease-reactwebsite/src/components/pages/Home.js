@@ -5,7 +5,7 @@ import HeroSection from '../HeroSection'
 function Home() {
     return (
         <div>
-            <HeroSection imageUrl={'/images/home_img.jpg'} title={'Welcome to Clarity Mind'} subtitle={'Better Mental Health Starts Here!'}/>
+            <HeroSection imageUrl={'/images/resized_home_img.jpg'} title={'Welcome to Clarity Mind'} subtitle={'Better Mental Health Starts Here!'}/>
             <br></br>
 
             <div class="container">
