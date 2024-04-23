@@ -5,23 +5,22 @@ import HeroSection from '../HeroSection'
 function Home() {
     return (
         <div>
-            <HeroSection imageUrl={'/images/resized_home_img.jpg'} title={'Welcome to Clarity Mind'} subtitle={'Better Mental Health Starts Here!'}/>
-            <br></br>
-
+            <HeroSection imageUrl={'/images/resized_home_img.jpg'} title={'Welcome to Clarity Mind'} subtitle={'Breaking Barriers and Building Bridges'}/>
+            <br></br>            
+            <br/><br/>
             <div class="container">
                 <div class="text-center">
-                    <h1>Welcome to Clarity Mind</h1>
-                    <p>Welcome to the Home Page!</p>
-                    <p>Feel free to talk to us!</p>
+                    <h1>Revolutionizing healing through AI - Powered Trauma Recovery Support</h1>
                 </div>
             </div>
+            <br/>
+            <br/>
             <div class="container">
                 <div class="row">
                     <div class="col-sm-3"></div>
                     <div class="col-sm-6">
                         <div class="text-center">
                             <h2 style={{ whiteSpace: 'nowrap' }}>How does Clarity Mind work?</h2>
-                            <p>Welcome to Clarity Mind, your personalized AI therapy companion!</p>
                         </div>
                         <ol style={{ whiteSpace: 'nowrap' }}>
                             <li>Sign up or log in to your Clarity Mind account.</li>

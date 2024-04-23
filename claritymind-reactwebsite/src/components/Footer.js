@@ -18,7 +18,7 @@ function Footer() {
                 <div className='footer-link-wrapper'>
                     <div className='footer-link-items'>
                         <h2>Contact Us Here!</h2>
-                        <Link to='/login'>ClarityMind@mail.com</Link>
+                        <Link to='/login'>claritymind.ai@mail.com</Link>
                         <Link to='/profile'>123-456-7890</Link>
                     </div>
                 </div>
