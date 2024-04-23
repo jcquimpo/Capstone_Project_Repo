@@ -7,7 +7,7 @@ function StreamlitEmbed() {
         title="Streamlit App"
         // src="http://localhost:8501" // Adjust the port if needed
         // ?embedded=true - needs to be added AFTER the streamlit app
-        src="https://mindeasechatbot.streamlit.app/?embedded=true"
+        src="https://claritymind-chatbot.streamlit.app/?embedded=true"
         style={{
           position: 'fixed',
           top: 0,

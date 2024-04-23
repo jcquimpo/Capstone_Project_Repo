@@ -17,7 +17,7 @@ export default function Profile({ username, email, name, age, mobile_num, gender
   
   // TODO: for redirection to streamlit
   const redirectToStreamlit = () => {
-    window.location.href = 'https://mindeasechatbot.streamlit.app/'; 
+    window.location.href = 'https://claritymind-chatbot.streamlit.app/?embedded=true'; 
     // window.location.href = 'https://deployed-streamlit-app-url.com';
   };
 
